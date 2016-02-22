@@ -1,0 +1,17 @@
+mongo:
+  image: 'mongo:latest'
+togelack:
+  image: 'sho2010/togelack:latest'
+  environment:
+    - MONGOID_ENV=production
+    - 'MONGO_URL=mongodb://mongo:27017/test_db'
+    - SECRET_KEY_BASE=YOUR_SETTING
+    - SLACK_CLIENT_ID=YOUR_SETTING
+    - SLACK_CLIENT_SECRET=YOUR_SETTING
+    - SLACK_TEAM_ID=YOUR_SETTING
+    - SLACK_TEAM_NAME=YOUR_SETTING
+    - SLACK_TOKEN=YOUR_SETTING
+  links:
+    - mongo
+  ports:
+    - '3000:3000'
