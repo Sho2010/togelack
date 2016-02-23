@@ -9,7 +9,7 @@ ENV RAILS_ENV="production" \
     SLACK_CLIENT_SECRET="" \
     SLACK_TEAM_ID="" \
     SLACK_TEAM_NAME="" \
-    MONGO_URL="localhost:27017" \
+    MONGO_URL="localhost:27017"
 
-# CMD bundle exec rake db:create db:migrate  && bundle exec rails s -b 0.0.0.0
+RUN bundle exec rake assets:precompile
 
